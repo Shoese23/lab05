@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F7FA"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="🎪Умный дом"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#2C3E50"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintTop_toTop0f="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <TextView
+        android:id="@+id/tempLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="🌡Tемпературa"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#3498DB"
+        app:layout_constraintTop_toTopOf="@id/guideline30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline50" />
+
+    <TextView
+        android:id="@+id/tempValue"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="22°C"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#E3F2FD"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tempLabel"
+        app:layout_constraintStart_toStartOf="@id/tempLabel"
+        app:layout_constraintEnd_toEndOf="@id/tempLabel"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/lightLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="💡Освещение"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#F39C12"
+        app:layout_constraintTop_toTopOf="@id/guideline30"
+        app:layout_constraintStart_toEndOf="@id/guideline50"
+        app:layout_constraintEnd_toEnd0f="parent" />
+
+    <TextView
+        android:id="@+id/lightValue"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="75%"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#FFF3E0"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/lightLabel"
+        app:layout_constraintStart_toStartOf="@id/lightLabel"
+        app:layout_constraintEnd_toEndOf="@id/lightLabel"
+        android:layout_marginTop="8dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/buttonBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tempValue, lightValue" />
+
+    <TextView
+        android:id="@+id/controlLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="🎛Управление"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#27AE60"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/buttonBarrier"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEnd0f="parent"
+        android:layout_marginTop="32dp" />
+
+    <Button
+        android:id="@+id/tempUpButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="Teплеe +"
+        android:textSize="16sp"
+        android:backgroundTint="#E74C3C"
+        app:layout_constraintTop_toBottomOf="@id/controlLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tempDownButton"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp" />
+    <Button
+        android:id="@+id/tempDownButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="Xолоднее -"
+        android:textSize="16sp"
+        android:backgroundTint="#3498DB"
+        app:layout_constraintTop_toTopOf="@id/tempUpButton"
+        app:layout_constraintStart_toEndOf="@id/tempUpButton"
+        app:layout_constraintEnd_toStartOf="@id/lightOnButton"
+        android:layout_marginEnd="8dp" />
+    <Button
+        android:id="@+id/lightOnButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="Включить"
+        android:textSize="16sp"
+        android:backgroundTint="#2ECC71"
+        app:layout_constraintTop_toTopOf="@id/tempUpButton"
+        app:layout_constraintStart_toEndOf="@id/tempDownButton"
+        app:layout_constraintEnd_toStartOf="@id/lightOffButton"
+        android:layout_marginEnd="8dp" />
+    <Button
+        android:id="@+id/lightOffButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="Выключить"
+        android:textSize="16sp"
+        android:backgroundTint="#E74C3C"
+        app:layout_constraintTop_toTopOf="@id/tempUpButton"
+        app:layout_constraintStart_toEndOf="@id/lightOnButton"
+        app:layout_constraintEnd_toEnd0f="parent" />
+
+    <View
+        android:id="@+id/securityIndicator"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="#2C3E50"
+        app:layout_constraintTop_toBottomOf="@id/tempUpButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEndtoEnd0f="parent"
+        android:layout_marginTop="32dp" />
+    <TextView
+        android:id="@+id/securityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="● Система безопасности"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="@id/securityIndicator"
+        app:layout_constraintBottom_toBottomOf="@id/securityIndicator"
+        app:layout_constraintStart_toStartOf="@id/securityIndicator"
+        app:layout_constraintEnd_toStartOf="@id/securityButton"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp" />
+    <Button
+    android:id="@+id/securityButton"
+    android:layout_width="120dp"
+    android:layout_height="40dp"
+    android:text="Активна"
+    android:textSize="14sp"
+    android:backgroundTint="#27AE60"
+    app:layout_constraintTop_toTopOf="@id/securityIndicator"
+    app:layout_constraintBottom_toBottomOf="@id/securityIndicator"
+    app:layout_constraintEnd_toEndOf="@id/securityIndicator"
+     android:layout_marginEnd="16dp" />
+    <TextView
+    android:id="@+id/statusText"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="Все системы работают нормально"
+    android:textSize="16sp"
+    android:textColor="#27AE60"
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
