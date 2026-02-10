@@ -18,9 +18,10 @@
         android:textColor="#2C3E50"
         android:gravity="center"
         android:layout_marginBottom="24dp"
-        app:layout_constraintTop_toTop0f="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline30"
@@ -58,15 +59,15 @@
 
     <TextView
         android:id="@+id/lightLabel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="187dp"
+        android:layout_height="27dp"
         android:text="💡Освещение"
+        android:textColor="#F39C12"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#F39C12"
-        app:layout_constraintTop_toTopOf="@id/guideline30"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline50"
-        app:layout_constraintEnd_toEnd0f="parent" />
+        app:layout_constraintTop_toTopOf="@id/guideline30" />
 
     <TextView
         android:id="@+id/lightValue"
@@ -101,29 +102,28 @@
         android:id="@+id/controlLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="🎛Управление"
+        android:textColor="#27AE60"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#27AE60"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/buttonBarrier"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEnd0f="parent"
-        android:layout_marginTop="32dp" />
+        app:layout_constraintTop_toBottomOf="@id/buttonBarrier" />
 
     <Button
         android:id="@+id/tempUpButton"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#E74C3C"
         android:text="Teплеe +"
         android:textSize="16sp"
-        android:backgroundTint="#E74C3C"
-        app:layout_constraintTop_toBottomOf="@id/controlLabel"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/tempDownButton"
         app:layout_constraintHorizontal_chainStyle="spread"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/controlLabel" />
     <Button
         android:id="@+id/tempDownButton"
         android:layout_width="0dp"
@@ -146,16 +146,17 @@
         app:layout_constraintStart_toEndOf="@id/tempDownButton"
         app:layout_constraintEnd_toStartOf="@id/lightOffButton"
         android:layout_marginEnd="8dp" />
+
     <Button
         android:id="@+id/lightOffButton"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:backgroundTint="#E74C3C"
         android:text="Выключить"
         android:textSize="16sp"
-        android:backgroundTint="#E74C3C"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tempUpButton"
-        app:layout_constraintStart_toEndOf="@id/lightOnButton"
-        app:layout_constraintEnd_toEnd0f="parent" />
+        app:layout_constraintStart_toEndOf="@id/lightOnButton" />
 
     <View
         android:id="@+id/securityIndicator"
@@ -164,13 +165,13 @@
         android:background="#2C3E50"
         app:layout_constraintTop_toBottomOf="@id/tempUpButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEndtoEnd0f="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="32dp" />
     <TextView
         android:id="@+id/securityText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="● Система безопасности"
+        android:text="🔒Система безопасности"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
@@ -181,22 +182,28 @@
         android:gravity="center_vertical"
         android:paddingStart="16dp" />
     <Button
-    android:id="@+id/securityButton"
-    android:layout_width="120dp"
-    android:layout_height="40dp"
-    android:text="Активна"
-    android:textSize="14sp"
-    android:backgroundTint="#27AE60"
-    app:layout_constraintTop_toTopOf="@id/securityIndicator"
-    app:layout_constraintBottom_toBottomOf="@id/securityIndicator"
-    app:layout_constraintEnd_toEndOf="@id/securityIndicator"
-     android:layout_marginEnd="16dp" />
-    <TextView
-    android:id="@+id/statusText"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:text="Все системы работают нормально"
-    android:textSize="16sp"
-    android:textColor="#27AE60"
+        android:id="@+id/securityButton"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:text="АКТИВНА"
+        android:textSize="14sp"
+        android:backgroundTint="#27AE60"
+        app:layout_constraintTop_toTopOf="@id/securityIndicator"
+        app:layout_constraintBottom_toBottomOf="@id/securityIndicator"
+        app:layout_constraintEnd_toEndOf="@id/securityIndicator"
+        android:layout_marginEnd="16dp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="✅Все системы работают нормально"
+        android:textColor="#27AE60"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/securityIndicator" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
