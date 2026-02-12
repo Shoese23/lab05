@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import com.example.lab05.R
 
 class MainActivity: AppCompatActivity() {
     private var temperature = 22

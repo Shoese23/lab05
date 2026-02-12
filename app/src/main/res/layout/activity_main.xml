@@ -206,4 +206,59 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/securityIndicator" />
 
+    <Button
+        android:id="@+id/tvButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#E3F2FD"
+        android:text="📺ТВ ВКЛ"
+        android:textColor="#175F9E"
+        android:textSize="10sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toStartOf="@id/audioButton"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleText" />
+    <Button
+        android:id="@+id/audioButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="🎵Аудио ВКЛ"
+        android:textColor="#cd6fce"
+        android:textSize="10sp"
+        android:backgroundTint="#F3E5F5"
+        app:layout_constraintTop_toTopOf="@id/tvButton"
+        app:layout_constraintStart_toEndOf="@id/tvButton"
+        app:layout_constraintEnd_toStartOf="@id/pkButton"
+        android:layout_marginEnd="16dp"
+        app:cornerRadius="0dp"/>
+    <Button
+        android:id="@+id/pkButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="🖥ПК Выкл"
+        android:textColor="#3dc900"
+        android:textSize="10sp"
+        android:backgroundTint="#E8F5E9"
+        app:layout_constraintTop_toTopOf="@id/tvButton"
+        app:layout_constraintStart_toEndOf="@id/audioButton"
+        app:layout_constraintEnd_toStartOf="@id/pozetButton"
+        android:layout_marginEnd="16dp"
+        app:cornerRadius="0dp"/>
+
+    <Button
+        android:id="@+id/pozetButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#FFF3E0"
+        android:textColor="#f59633"
+        android:text="🔌Розетки 5/8"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvButton"
+        app:layout_constraintStart_toEndOf="@id/pkButton"
+        app:cornerRadius="0dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
