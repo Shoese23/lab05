@@ -37,7 +37,7 @@ class MainActivity: AppCompatActivity() {
                     statusText.setTextColor(getColor(android.R.color.holo_blue_dark))
                 }
 
-                temperature < 26 -> {
+                temperature > 26 -> {
                     tempValue.setBackgroundColor(getColor(android.R.color.holo_red_light))
                     statusText.text = "🔥Температура высокая"
                     statusText.setTextColor(getColor(android.R.color.holo_red_dark))
