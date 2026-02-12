@@ -78,8 +78,7 @@ class MainActivity: AppCompatActivity() {
         fun updateSecurity() {
             if (isSecurityActive) {
                 securityButton.text = "AKTИBHA"
-                securityButton.backgroundTintList =
-                    getColorStateList(android.R.color.holo_green_dark)
+                securityButton.backgroundTintList = getColorStateList(android.R.color.holo_green_dark)
                 securityIndicator.setBackgroundColor(getColor(android.R.color.holo_green_dark))
                 securityText.text = "🔒Система АКТИВНА"
                 statusText.text = "✅Безопасность активирована"
